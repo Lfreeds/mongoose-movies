@@ -56,7 +56,11 @@ Promise.resolve()
     return Performer.findOne({ name: "Rami Malek" });
   })
   // 10) Find all performers born before 1980
-  .then// 11) Find all performers whose name starts with a 'J'
+  .then(function (result) {
+    console.log("9): ", result);
+    return Performer.where("born").lt(1980);
+  })
+  // 11) Find all performers whose name starts with a 'J'
 
   // 12) Add a reference to performer 'Bill Murray' to
   //     the movie Caddyshack's cast property and save.
