@@ -32,6 +32,7 @@ Promise.resolve()
   .then(function (result) {
     // 5) Find all movies with an MPAA Rating of 'PG' or 'PG-13'
     console.log("4): ", result);
+    return Movie.where("mpaaRating").in(["PG", "PG-13"]);
   })
   // 6) Find the first movie found with a releaseYear of 2018
 
