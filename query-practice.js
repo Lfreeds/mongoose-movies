@@ -27,10 +27,12 @@ Promise.resolve()
   .then(function (result) {
     console.log("3): ", result);
     // 4) Find all movies that are still showing
+    return Movie.find({ nowShowing: true });
   })
-
-  // 5) Find all movies with an MPAA Rating of 'PG' or 'PG-13'
-
+  .then(function (result) {
+    // 5) Find all movies with an MPAA Rating of 'PG' or 'PG-13'
+    console.log("4): ", result);
+  })
   // 6) Find the first movie found with a releaseYear of 2018
 
   // 7) Find all movies released after 1980
