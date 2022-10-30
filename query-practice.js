@@ -61,7 +61,10 @@ Promise.resolve()
     return Performer.where("born").lt(1980);
   })
   // 11) Find all performers whose name starts with a 'J'
-
+  .then(function (result) {
+    console.log("10): ", result);
+    return Performer.find({ name: /^J/ });
+  })
   // 12) Add a reference to performer 'Bill Murray' to
   //     the movie Caddyshack's cast property and save.
   //     console.log the updated movie.
