@@ -22,12 +22,12 @@ Promise.resolve()
     // Follow the same .then structure used above from this point forward
     // Don't forget to console.log the exercise number also as shown above
     // 3) Find all movies with an MPAA Rating of 'PG'
+    return Movie.find({ mpaaRating: "PG" });
   })
   .then(function (result) {
-    console;
+    console.log("3): ", result);
+    // 4) Find all movies that are still showing
   })
-
-  // 4) Find all movies that are still showing
 
   // 5) Find all movies with an MPAA Rating of 'PG' or 'PG-13'
 
