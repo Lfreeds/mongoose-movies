@@ -35,7 +35,10 @@ Promise.resolve()
     return Movie.where("mpaaRating").in(["PG", "PG-13"]);
   })
   // 6) Find the first movie found with a releaseYear of 2018
-
+  .then(function (result) {
+    console.log("5): ", result);
+    return Movie.findOne({ releaseYear: 2018 });
+  })
   // 7) Find all movies released after 1980
 
   // 8) Find all movies whose titles start with a 'C'
