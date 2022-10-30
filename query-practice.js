@@ -40,7 +40,10 @@ Promise.resolve()
     return Movie.findOne({ releaseYear: 2018 });
   })
   // 7) Find all movies released after 1980
-
+  .then(function (result) {
+    console.log("6): ", result);
+    return Movie.where("releaseYear").gt(1980);
+  })
   // 8) Find all movies whose titles start with a 'C'
   // Hint: StackOverflow will show how to use a regular expression
 
