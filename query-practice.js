@@ -46,7 +46,10 @@ Promise.resolve()
   })
   // 8) Find all movies whose titles start with a 'C'
   // Hint: StackOverflow will show how to use a regular expression
-
+  .then(function (result) {
+    console.log("7): ", result);
+    return Movie.find({ title: /^C/ });
+  })
   // 9) Find the performer named 'Rami Malek'
 
   // 10) Find all performers born before 1980
